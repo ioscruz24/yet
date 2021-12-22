@@ -12,7 +12,7 @@ if __name__ == '__main__':
     tst.scope.set_x_range(min=-1.0, max=10.0)
     tst.scope.set_trigger(mode=NORMAL_TRIGGER_MODE, source=MANUAL_TRIGGER_SOURCE)
     tst.spi.configure(class=SpiMaster, channels=['Switcher'])
-    tst.spi.Switcher.configure(class=Max17432SwitchArray, channels=['Btn0', 'Btn1'])
+    tst.spi.Switcher.configure(class=Max17432SwitchArray, channels=['', ''])
     tst.la.configure(class=LogicAnalyzer, channels=['RedPwm', 'GreenPwm', 'BluePwm', 'IrPwm'])
     tst.case('')
     tst.step('')
