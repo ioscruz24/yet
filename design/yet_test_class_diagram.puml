@@ -1,0 +1,38 @@
+@startuml
+abstract Script
+Script : devices
+
+Script "0..*" *-- Device
+Script : initialize()
+
+abstract Function
+Function : int num_channels
+
+abstract Device
+Device : type
+Device : name
+Device : functions
+
+Device "1..*" *--  Function
+
+abstract Oscilloscope
+abstract LogicAnalyzer
+abstract PatternGenerator
+abstract Multimeter
+abstract SPIMaster
+abstract I2CMaster
+
+Device <|- DwfDevice
+Function <|- Oscilloscope
+Function <|- LogicAnalyzer
+Function <|- PatternGenerator
+Function <|- Multimeter
+Function <|- SPIMaster
+Function <|- I2CMaster
+Oscilloscope <|- DwfOscilloscope
+LogicAnalyzer <|- DwfLogicAnalyzer
+PatternGenerator <|- DwfPatternGenerator
+Multimeter <|- DwfMultimeter
+SPIMaster <|- DwfSPIMaster
+I2CMaster <|- DwfI2CMaster
+@enduml
