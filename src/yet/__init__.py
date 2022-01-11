@@ -1,15 +1,16 @@
-from yet.test import Function
-from yet.test.digilent import DwfOscilloscope
-from yet.test.siglent import Sds1104xeOscilloscope
+from yet.workbench.digilent import DwfOscilloscope
+from yet.workbench.siglent import Sds1kOscilloscope
 
 class Device(Object):
     def __init__(self):
+
+    def get_instruments():
 
 class Instrument(Object):
     def __init__(self):
 
     def configure():
 
-class Oscilloscope(Function):
-    classes = [DwfOscilloscope, Sds1104xeOscilloscope]
+class Oscilloscope(Instrument):
+    classes = [DwfOscilloscope, Sds1kOscilloscope]
     def __init__(self):
