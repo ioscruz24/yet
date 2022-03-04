@@ -1,0 +1,9 @@
+@type: types
+bool:
+  primitive: True
+int:
+  primitive: True
+float:
+  primitive: True
+str:
+  primitive: True
