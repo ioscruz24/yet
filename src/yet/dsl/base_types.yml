@@ -1,0 +1,82 @@
+^type: Types
+Bool:
+    is: [Scalar]
+    primitive: True
+Int:
+    is: [Scalar]
+    primitive: True
+UInt:
+    is: [Int]
+    primitive: False
+Float:
+    is: [Scalar]
+    primitive: True
+Str:
+    is: [Scalar]
+    primitive: True
+Key:
+    is: [Str]
+Map:
+    is: [Node]
+    primitive: True
+    multiplicity: {min: 0, max: *}
+    index_type: Key
+    element_type: Node
+Seq:
+    is: [Node]
+    primitive: True
+    multiplicity: {min: 0, max: *}
+Id:
+    is: [Key]
+Object:
+    is: [Map]
+    attrs:
+Types:
+    is: [Map]
+    element_type: Type
+Type:
+    is: [Map]
+    identifiable: True
+    scope: Global
+    attrs:
+        is:
+            type: [Type, Seq]
+        attrs:
+            type: Map
+            optional: True
+        primitive:
+            type: Bool
+            default: False
+        identifiable:
+            type: Bool
+            default: False
+        scope:
+            type: Scope
+            optional: False
+            default: Node
+        mutiplicity:
+            type: [Int, Range]
+        enum:
+            type: Enum
+Scope:
+    is: [Str]
+    enum: [Global, Downstream, Node]
+Range:
+    is: [Map]
+    attrs:
+        min:
+            type: UInt
+        max:
+            type: [UInt, Str]
+Scalar:
+    is: [Node]
+    multiplicity: 1
+Attr:
+    identifiable: True
+    scope: node
+Node:
+    is: []
+    attrs:
+        attrs:
+            type: Map
+        is:
