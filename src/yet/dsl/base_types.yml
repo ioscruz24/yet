@@ -75,8 +75,4 @@ Attr:
     identifiable: True
     scope: node
 Node:
-    is: []
-    attrs:
-        attrs:
-            type: Map
-        is:
+    
