@@ -4,8 +4,8 @@ Spyder Editor
 
 This is a temporary script file.
 """
-from 
+from
 
-class Reader(object):
+class Loader(object):
     def __init__():
         

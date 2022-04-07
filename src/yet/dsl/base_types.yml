@@ -1,4 +1,4 @@
-^type: Types
+:: Types
 Bool:
     is: [Scalar]
     primitive: True
@@ -20,27 +20,32 @@ Map:
     is: [Node]
     primitive: True
     multiplicity: {min: 0, max: *}
-    index_type: Key
+    index_type: Str
     element_type: Node
 Seq:
     is: [Node]
     primitive: True
     multiplicity: {min: 0, max: *}
-Id:
+    index_type: UInt
+    element_type: Node
+TypeId:
     is: [Key]
 Object:
     is: [Map]
     attrs:
+TypeId:
+    is: [Str]
+    scope: GlobalScope
 Types:
-    is: [Map]
+    is: [Map<TypeId,Type>]
+    index_type: TypeId
     element_type: Type
 Type:
-    is: [Map]
+    is: [Map<Attr>]
     identifiable: True
-    scope: Global
     attrs:
         is:
-            type: [Type, Seq]
+            type: [Seq<Type>]
         attrs:
             type: Map
             optional: True
@@ -60,7 +65,7 @@ Type:
             type: Enum
 Scope:
     is: [Str]
-    enum: [Global, Downstream, Node]
+    enum: [GlobalScope, NodeScope, DownStreamScope, UpStreamScope]
 Range:
     is: [Map]
     attrs:
@@ -75,4 +80,4 @@ Attr:
     identifiable: True
     scope: node
 Node:
-    
+    scope: NodeScope

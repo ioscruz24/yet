@@ -1,0 +1,26 @@
+<: {schema: "yet0_schema.yml"}
+:: Project
+Example:
+    brief: This is an example project
+    desc:
+    orgs:
+        <ABC: {include: "https://example.com/team1.yml"}
+        <BCD: {include: "https://example.com/team2.yml"}
+    specs:
+        <Sys: {include: "example_sys_spec.yml"}
+        <Hw: {include: "example_hw_spec.yml"}
+        <Me: {include: "example_me_spec.yml"}
+        <Fw: {include: "example_fw_spec.yml"}
+        <Qa: {include: "example_qa_spec.yml"}
+        <Sw: {include: "example_sw_spec.yml"}
+    milestones:
+        POC:
+        EV:
+        DV:
+        PV:
+    log:
+        -
+            ver: 0.0.1
+            brief: Initial version
+            author: [iosacruz]
+            date: 2022-03-12

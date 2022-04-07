@@ -1,0 +1,9 @@
+<include: "base_types.yml"
+:: Types
+Specs:
+    is: [Map<SpecId,Spec>]
+Spec:
+    is: [Object]
+    attrs:
+        brief:
+            is: [Str]
